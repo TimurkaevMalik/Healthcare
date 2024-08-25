@@ -36,9 +36,9 @@ struct MedsTableCell: View {
                         
                         avatar
                             .resizable()
+                            .tint(.ypDarkGray)
                             .frame(width: 50, height: 50)
                             .padding(.leading, 16)
-                            .background(Color(.purple))
                         
                         MedicInfo(name: name,
                                   lastName: lastName,
@@ -56,7 +56,6 @@ struct MedsTableCell: View {
                         }
                         .frame(width: 24, height: 24, alignment: .top)
                         .padding(.trailing, 16)
-                        .background(Color(.orange))
                     }
                     .padding(.top, 20)
                     
@@ -64,8 +63,8 @@ struct MedsTableCell: View {
                         print("appointment")
                     }, label: {
                         Text("Записаться")
-                            .frame(height: 47)
-                            .padding([.leading, .trailing], 120)
+                            .tint(.ypWhite)
+                            .frame(width: geo.size.width - 32, height: 47)
                             .background(Rectangle()
                                 .fill(.ypPink)
                                 .clipShape(.rect(cornerRadius: 8)))
@@ -73,7 +72,6 @@ struct MedsTableCell: View {
                     
                 }
             }
-            .padding([.leading, .trailing], 16)
             .frame(height: 224)
         }
     }
@@ -100,9 +98,17 @@ struct MedicInfo: View {
                 .frame(height: 50)
                 .font(.ypSemiBold)
                 .tint(.ypBlack)
-                .background(Color(.green))
             
-            Rank(rank: rank)
+            if rank > 5 {
+                let rank = 5
+                Rank(rank: rank)
+            } else if rank < 0 {
+                let rank = 0
+                Rank(rank: rank)
+            } else {
+                Rank(rank: rank)
+            }
+            
             
             Text("\(profession) ・ стаж \(seniority) лет")
                 .tint(.ypDarkGray)
@@ -122,14 +128,14 @@ struct Rank: View {
     var body: some View {
         
         HStack(spacing: 2.4) {
-            ForEach(0..<rank) { _ in
-                
+            
+            ForEach(0..<rank, id: \.self) { _ in
                 Image(.starFill)
                     .resizable()
                     .frame(width: 12, height: 12)
             }
             
-            ForEach(rank..<5) { _ in
+            ForEach(rank..<5, id: \.self) { _ in
                 Image(.starEmpty)
                     .resizable()
                     .frame(width: 12, height: 12)
@@ -143,23 +149,7 @@ struct Rank: View {
                   lastName: "Семенова",
                   patronymic: "Сергеевна",
                   avatar: Image(systemName: "person.crop.circle"),
-                  rank: 4,
+                  rank: 3,
                   seniority: 3,
                   minimumPrice: 600)
 }
-
-//struct AvatarNameLike: View {
-//
-//    let name: String
-//    let lastName: String
-//    let patronymic: String
-//    let avatar: Image
-//    let rank: Int
-//    let seniority: Int
-//    let minimumPrice: Int
-//    let profession = "Педиатр"
-//
-//    var body: some View {
-//
-//    }
-//}

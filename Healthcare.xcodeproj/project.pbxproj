@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BCC079EF2C79BB2C005345DB /* MedsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC079EE2C79BB2C005345DB /* MedsTableCell.swift */; };
+		BCC1823B2C7AE82A00A1DDF2 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC1823A2C7AE82A00A1DDF2 /* FilterButton.swift */; };
 		BCC608502C783E0500EB5575 /* HealthcareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6084F2C783E0500EB5575 /* HealthcareApp.swift */; };
 		BCC608522C783E0500EB5575 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC608512C783E0500EB5575 /* RootView.swift */; };
 		BCC608562C783E0700EB5575 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC608552C783E0700EB5575 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		BCC079EE2C79BB2C005345DB /* MedsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedsTableCell.swift; sourceTree = "<group>"; };
+		BCC1823A2C7AE82A00A1DDF2 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		BCC6084C2C783E0500EB5575 /* Healthcare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Healthcare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC6084F2C783E0500EB5575 /* HealthcareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthcareApp.swift; sourceTree = "<group>"; };
 		BCC608512C783E0500EB5575 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				BCC608852C784EEA00EB5575 /* TabBarItem.swift */,
 				BCC079EE2C79BB2C005345DB /* MedsTableCell.swift */,
+				BCC1823A2C7AE82A00A1DDF2 /* FilterButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				BCC079EF2C79BB2C005345DB /* MedsTableCell.swift in Sources */,
 				BCC608892C78572400EB5575 /* Fonts.swift in Sources */,
 				BCC608832C7847C400EB5575 /* HomePage.swift in Sources */,
+				BCC1823B2C7AE82A00A1DDF2 /* FilterButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

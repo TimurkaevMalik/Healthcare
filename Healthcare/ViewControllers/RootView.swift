@@ -10,19 +10,21 @@ import SwiftUI
 struct RootView: View {
     
     @State var selectedTab: Tabs = .home
-
+    @State var filter: Filter = .price
+    
     var body: some View {
         
-        
-        
         if selectedTab == .home {
-            HomePage()
+            HomePage(filter: $filter)
         } else if selectedTab == .appointment {
             Text("Приемы")
+                .font(.ypRegularTitle)
         } else if selectedTab == .chat {
-            Text("Календарь")
+            Text("Чат")
+                .font(.ypRegularTitle)
         } else if selectedTab == .profile {
             Text("Профиль")
+                .font(.ypRegularTitle)
         }
         
         Spacer()
