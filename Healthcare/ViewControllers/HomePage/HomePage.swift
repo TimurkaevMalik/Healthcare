@@ -7,52 +7,49 @@
 
 import SwiftUI
 
-enum Filter: String {
-    case price = "По цене"
-    case seniority = "По стажу"
-    case rank = "По рейтингу"
-}
 
 struct HomePage: View {
     
     @Binding var filter: Filter
-    
-    let titles = ["По цене", "По стажу", "По рейтингу"]
+    @State var searchText = ""
     
     var body: some View {
-        
-        VStack {
             
-            Text("Приемы")
-                .font(.ypRegularTitle)
+            NavigationStack {
+                
+                VStack(spacing: 16) {
+                    
+                    SearchBar(text: $searchText, placeholder: "Поиск")
+                        .frame(height: 36)
+                        .padding(.top, 15)
+                        
+                    HomePageFilter(filter: filter)
+                    
+                    List(0..<7) { _ in
+                        
+                        MedsTableCell(name: "osdf", lastName: "adsffa", patronymic: "asdff", avatar: Image(systemName: "person"), rank: 3, seniority: 5, minimumPrice: 400).background(.ypSilver)
+                    }
+                    .scrollContentBackground(.hidden)
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
             
-            HStack (spacing: 0) {
-                
-                FilterButton(
-                    title: titles[0],
-                    isActive: filter == .price,
-                    height: 32) {
-                        filter = .price
+                            ToolbarItem(placement: .topBarLeading) {
+                                
+                                Button {
+                                    print("Did tab back button")
+                                } label: {
+                                    Image(.arrowBack)
+                                        .frame(width: 12, height: 20.5)
+                                }
+                                
+                            }
+                            
+                            ToolbarItem(placement: .principal) {
+                                Text("Приемы")
+                                    .font(.ypRegularTitle)
+                            }
                     }
-                
-                FilterButton(
-                    title: titles[1],
-                    isActive: filter == .seniority,
-                    height: 32) {
-                        filter = .seniority
-                    }
-                
-                FilterButton(
-                    title: titles[2],
-                    isActive: filter == .rank,
-                    height: 32) {
-                        filter = .rank
-                    }
-            }
-            .clipShape(.rect(cornerRadius: 8))
-            .overlay(RoundedRectangle(cornerRadius: 8).stroke(.ypGray, lineWidth: 1))
-            .padding([.leading, .trailing], 16)
-            
+            }.background(.ypLightGray)
         }
     }
 }
@@ -60,5 +57,3 @@ struct HomePage: View {
 #Preview {
     HomePage(filter: .constant(.price))
 }
-
-

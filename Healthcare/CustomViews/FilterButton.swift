@@ -7,55 +7,6 @@
 
 import SwiftUI
 
-//struct FilterButton: View {
-//
-//    let title: String
-//    let isActive: Bool
-//    let action: ()->Void
-//
-//    var body: some View {
-//
-//        GeometryReader { geo in
-//
-////            HStack (spacing: 0) {
-////                ForEach(0..<3, id: \.self) { index in
-//
-//                    Button{
-//                        action()
-//                    } label: {
-//                        Text(title)
-//
-//                            .tint(isActive ? .ypWhite : .ypDarkGray)
-//
-//                            .frame(width: geo.size.width/3, height: 31)
-//                            .border(.ypGray, width: 1)
-//                            .background(isActive ? Color.pink : Color.ypWhite)
-//                        //                            .padding()
-//
-//                    }
-////                    }
-////                    }.clipShape(.rect(cornerRadius: 8))
-////                        .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.ypPink, lineWidth: 1))
-//
-//
-////                    .clipShape(.rect(cornerRadius: 8))
-//
-////                    .border(.red, width: 1)
-////                    .clipShape(.rect(cornerRadius: 8))
-////                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.ypPink, lineWidth: 1))
-//
-////                }
-////            }
-//
-//        }
-////            } .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.ypPink, lineWidth: 1))
-////        }.background(Color.ypLightGray)
-//    }
-//}
-
-
-
-
 
 struct FilterButton: View {
     
@@ -84,7 +35,7 @@ struct FilterButton: View {
                 }
                 .frame(width: geo.size.width, height: 32)
                 .border(.ypGray, width: 1)
-                .background(isActive ? Color.pink : Color.ypWhite)
+                .background(isActive ? Color.ypPink : Color.ypWhite)
             }
         }
         .frame(height: height)

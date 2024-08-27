@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-enum Tabs: Int {
-    case home = 0
-    case appointment = 1
-    case chat = 2
-    case profile = 3
-}
 
 struct TabBarController: View {
     
