@@ -39,6 +39,7 @@ struct TabBarController: View {
                     selectedTab = .profile
                 }
             }
+            
         }
         .frame(height: 83)
     }

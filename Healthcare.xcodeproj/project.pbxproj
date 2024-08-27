@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BCC079EF2C79BB2C005345DB /* MedsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC079EE2C79BB2C005345DB /* MedsTableCell.swift */; };
+		BC9512112C7D8AFC0049D71D /* MedicPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9512102C7D8AFC0049D71D /* MedicPage.swift */; };
+		BC9512132C7D91B10049D71D /* MedicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9512122C7D91B10049D71D /* MedicInfo.swift */; };
+		BCC079EF2C79BB2C005345DB /* MedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC079EE2C79BB2C005345DB /* MedTableCell.swift */; };
 		BCC1823B2C7AE82A00A1DDF2 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC1823A2C7AE82A00A1DDF2 /* FilterButton.swift */; };
 		BCC608502C783E0500EB5575 /* HealthcareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6084F2C783E0500EB5575 /* HealthcareApp.swift */; };
 		BCC608522C783E0500EB5575 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC608512C783E0500EB5575 /* RootView.swift */; };
@@ -24,7 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BCC079EE2C79BB2C005345DB /* MedsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedsTableCell.swift; sourceTree = "<group>"; };
+		BC9512102C7D8AFC0049D71D /* MedicPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicPage.swift; sourceTree = "<group>"; };
+		BC9512122C7D91B10049D71D /* MedicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicInfo.swift; sourceTree = "<group>"; };
+		BCC079EE2C79BB2C005345DB /* MedTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedTableCell.swift; sourceTree = "<group>"; };
 		BCC1823A2C7AE82A00A1DDF2 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		BCC6084C2C783E0500EB5575 /* Healthcare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Healthcare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC6084F2C783E0500EB5575 /* HealthcareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthcareApp.swift; sourceTree = "<group>"; };
@@ -52,6 +56,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC9512142C7D926B0049D71D /* MedicCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC9512122C7D91B10049D71D /* MedicInfo.swift */,
+				BCC079EE2C79BB2C005345DB /* MedTableCell.swift */,
+			);
+			path = MedicCell;
+			sourceTree = "<group>";
+		};
+		BCB738F02C7D8A9500135B79 /* MedicPage */ = {
+			isa = PBXGroup;
+			children = (
+				BC9512102C7D8AFC0049D71D /* MedicPage.swift */,
+			);
+			path = MedicPage;
+			sourceTree = "<group>";
+		};
 		BCC608432C783E0500EB5575 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +117,7 @@
 				BCC608512C783E0500EB5575 /* RootView.swift */,
 				BCC6087E2C78412A00EB5575 /* TabBarController */,
 				BCC608812C7847A400EB5575 /* HomePage */,
+				BCB738F02C7D8A9500135B79 /* MedicPage */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -120,8 +142,8 @@
 		BCC608842C784ED200EB5575 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				BC9512142C7D926B0049D71D /* MedicCell */,
 				BCC608852C784EEA00EB5575 /* TabBarItem.swift */,
-				BCC079EE2C79BB2C005345DB /* MedsTableCell.swift */,
 				BCC1823A2C7AE82A00A1DDF2 /* FilterButton.swift */,
 				BCD465CC2C7C3CD200D3177A /* SearchBar.swift */,
 			);
@@ -220,12 +242,14 @@
 				BCC608862C784EEA00EB5575 /* TabBarItem.swift in Sources */,
 				BCCC23E22C7B0BC200E0A260 /* Tabs.swift in Sources */,
 				BCC608502C783E0500EB5575 /* HealthcareApp.swift in Sources */,
-				BCC079EF2C79BB2C005345DB /* MedsTableCell.swift in Sources */,
+				BCC079EF2C79BB2C005345DB /* MedTableCell.swift in Sources */,
 				BCC608892C78572400EB5575 /* Fonts.swift in Sources */,
 				BCD465CF2C7C3E6900D3177A /* HomePageFilter.swift in Sources */,
 				BCC608832C7847C400EB5575 /* HomePage.swift in Sources */,
 				BCCC23E02C7B0BAC00E0A260 /* Filter.swift in Sources */,
+				BC9512132C7D91B10049D71D /* MedicInfo.swift in Sources */,
 				BCD465CD2C7C3CD200D3177A /* SearchBar.swift in Sources */,
+				BC9512112C7D8AFC0049D71D /* MedicPage.swift in Sources */,
 				BCC1823B2C7AE82A00A1DDF2 /* FilterButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
