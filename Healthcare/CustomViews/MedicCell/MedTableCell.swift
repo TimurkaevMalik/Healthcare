@@ -16,21 +16,32 @@ struct MedTableCell: View {
     let rank: Int
     let seniority: Int
     let minimumPrice: Int
+    let category: String
+    let university: String
+    let organizations: String
+    let servicesPrice: ServicesPriceModel
     
     let likeAction: () -> Void
-    let appointmentAction: () -> Void
-    let cellTapAction: () -> Void
     
     var body: some View {
         
-        Button {
-            cellTapAction()
-        } label: {
+        NavigationLink(destination:
+                        MedicPage(name: name,
+                                  lastName: lastName,
+                                  patronymic: patronymic,
+                                  avatar: avatar,
+                                  category: category,
+                                  university: university,
+                                  organizations: organizations,
+                                  rank: rank,
+                                  seniority: seniority,
+                                  minimumPrice: minimumPrice,
+                                  servicesPrice: servicesPrice)){
             
             GeometryReader { geo in
                 
                 Rectangle()
-                    .tint(.ypWhite)
+                    .foregroundStyle(Color.ypWhite)
                     .clipShape(.rect(cornerRadius: 8))
                     .overlay(RoundedRectangle(cornerRadius: 8)
                         .stroke(.ypGray, lineWidth: 1.0))
@@ -40,8 +51,9 @@ struct MedTableCell: View {
                         
                         avatar
                             .resizable()
-                            .tint(.ypDarkGray)
+                            .foregroundStyle(.ypPink)
                             .frame(width: 50, height: 50)
+                            .clipShape(.rect(cornerRadius: 25))
                             .padding(.leading, 16)
                         
                         MedicInfo(name: name,
@@ -63,10 +75,9 @@ struct MedTableCell: View {
                     }
                     .padding(.top, 20)
                     
-                    AppointmentButton(text: "Записаться") {
-                        appointmentAction()
-                    }
-                    .padding([.leading, .trailing], 16)
+                    AppointmentButton(text: "Записаться", servicesPrices: servicesPrice)
+                        .frame(height: 47)
+                        .padding([.leading, .trailing], 16)
                     
                 }
             }
@@ -76,15 +87,20 @@ struct MedTableCell: View {
 }
 
 
+
 #Preview {
     MedTableCell(name: "Дарья",
                  lastName: "Семенова",
                  patronymic: "Сергеевна",
-                 avatar: Image(systemName: "person.crop.circle"),
+                 avatar: Image(.realAvatar),
                  rank: 3,
                  seniority: 3,
                  minimumPrice: 600,
-                 likeAction: {},
-                 appointmentAction: {},
-                 cellTapAction: {})
+                 category: "category",
+                 university: "university",
+                 organizations: "organizations",
+                 servicesPrice: ServicesPriceModel(videoChat: 600,
+                                                   home: 600,
+                                                   hospital: 600),
+                 likeAction: {})
 }

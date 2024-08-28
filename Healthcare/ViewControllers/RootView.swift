@@ -18,7 +18,10 @@ struct RootView: View {
         //        VStack {
         
         if selectedTab == .home {
-            HomePage(filter: $filter)
+            HomePage(filter: $filter, servicesPrice:
+                        ServicesPriceModel(videoChat: 600,
+                                           home: 600,
+                                           hospital: 600))
         } else if selectedTab == .appointment {
             Text("Приемы")
                 .font(.ypRegularTitle)

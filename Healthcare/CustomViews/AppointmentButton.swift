@@ -8,23 +8,21 @@
 import SwiftUI
 
 struct AppointmentButton: View {
-
+    
     let text: String
-    let appointmentAction: () -> Void
+    let servicesPrices: ServicesPriceModel
     
     var body: some View {
         
-        ZStack {
+        NavigationLink(destination: ServicesPricePage(servicesPrices: servicesPrices)) {
             
-            Rectangle().frame(height: 60).foregroundStyle(Color.ypPink)
-                .clipShape(.rect(cornerRadius: 8))
-            
-            Button{
-                appointmentAction()
-            } label: {
-                Text(text)
-                    .tint(.ypWhite)
+            ZStack {
                 
+                Rectangle().frame(height: 60).foregroundStyle(Color.ypPink)
+                    .clipShape(.rect(cornerRadius: 8))
+                
+                Text(text)
+                    .foregroundStyle(.ypWhite)
             }
         }
     }
@@ -32,5 +30,8 @@ struct AppointmentButton: View {
 
 
 #Preview {
-    AppointmentButton(text: "Записаться", appointmentAction: {})
+    AppointmentButton(text: "Записаться", servicesPrices:
+                        ServicesPriceModel(videoChat: 600,
+                                           home: 600,
+                                           hospital: 600))
 }

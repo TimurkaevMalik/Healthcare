@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MedicPage: View {
     
-    @Binding var tabs: Tabs
+    @Environment(\.dismiss) private var dismiss
     
     let name: String
     let lastName: String
@@ -21,8 +21,7 @@ struct MedicPage: View {
     let rank: Int
     let seniority: Int
     let minimumPrice: Int
-    
-    let appointmentAction: () -> Void
+    let servicesPrice: ServicesPriceModel
     
     var body: some View {
         
@@ -36,6 +35,7 @@ struct MedicPage: View {
                         .resizable()
                         .tint(.ypDarkGray)
                         .frame(width: 50)
+                        .clipShape(.rect(cornerRadius: 25))
                     
                     Text(lastName + "\n" + name + " " + patronymic)
                         .lineSpacing(1)
@@ -73,17 +73,16 @@ struct MedicPage: View {
                 
                 Spacer(minLength: 0)
                 
-                AppointmentButton(text: "Записаться") {
-                    appointmentAction()
-                }
-                .padding(.bottom, 10)
+                AppointmentButton(text: "Записаться", servicesPrices: servicesPrice)
+                    .padding(.bottom, 10)
             }
             .padding([.leading, .trailing, .top], 16)
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
-                        print("Did tab back button")
+                        dismiss()
                     } label: {
                         Image(.arrowBack)
                             .frame(width: 12, height: 20.5)
@@ -97,9 +96,6 @@ struct MedicPage: View {
             }
             .background(.ypLightGray)
         }
-        
-        Spacer(minLength: 0)
-        TabBarController(selectedTab: $tabs)
     }
 }
 
@@ -121,16 +117,17 @@ struct MedicShortInfo: View {
 }
 
 #Preview {
-    MedicPage(tabs: .constant(.home),
-              name: "Дарья",
+    MedicPage(name: "Дарья",
               lastName: "Семенова",
               patronymic: "Сергеевна",
-              avatar: Image(systemName: "person.crop.circle"),
+              avatar: Image(.realAvatar),
               category: "высшая",
               university: "литьии",
               organizations: "Больница 2",
               rank: 3,
               seniority: 3,
               minimumPrice: 600,
-              appointmentAction: {})
+              servicesPrice: ServicesPriceModel(videoChat: 600,
+                                                home: 600,
+                                                hospital: 600))
 }
