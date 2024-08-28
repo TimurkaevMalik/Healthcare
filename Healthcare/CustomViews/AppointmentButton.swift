@@ -10,6 +10,7 @@ import SwiftUI
 struct AppointmentButton: View {
 
     let text: String
+    let appointmentAction: () -> Void
     
     var body: some View {
         
@@ -19,7 +20,7 @@ struct AppointmentButton: View {
                 .clipShape(.rect(cornerRadius: 8))
             
             Button{
-                print("appointment")
+                appointmentAction()
             } label: {
                 Text(text)
                     .tint(.ypWhite)
@@ -31,5 +32,5 @@ struct AppointmentButton: View {
 
 
 #Preview {
-    AppointmentButton(text: "Записаться")
+    AppointmentButton(text: "Записаться", appointmentAction: {})
 }

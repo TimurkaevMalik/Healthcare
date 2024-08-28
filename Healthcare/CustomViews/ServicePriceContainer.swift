@@ -9,7 +9,8 @@ import SwiftUI
 
 struct servicePriceContainer: View {
     
-    let minimumPrice: Int
+    let leftText: String
+    let rightText: String
     
     var body: some View {
         
@@ -21,11 +22,11 @@ struct servicePriceContainer: View {
             
             HStack {
                 
-                Text("Стоимость услуг")
+                Text(leftText)
                 
                 Spacer()
                 
-                Text("от \(minimumPrice) ₽")
+                Text(rightText)
             }
             .padding([.leading, .trailing], 16)
         }
@@ -33,5 +34,5 @@ struct servicePriceContainer: View {
 }
 
 #Preview {
-    servicePriceContainer(minimumPrice: 600)
+    servicePriceContainer(leftText: "Стоимость услуг", rightText: "от 600 ₽")
 }

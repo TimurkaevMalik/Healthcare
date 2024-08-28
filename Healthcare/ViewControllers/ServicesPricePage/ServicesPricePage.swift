@@ -7,15 +7,36 @@
 
 import SwiftUI
 
+
+struct ServicesPriceModel {
+    let videoChat: Int
+    let home: Int
+    let hospital: Int
+}
+
 struct ServicesPricePage: View {
     
-    @Binding var tabs: Tabs
+    let servicesPrices: ServicesPriceModel
     
     var body: some View {
         
         NavigationStack {
             
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 12) {
+                
+                Text("Видеоконсультация")
+                    .padding(.top, 4)
+                servicePriceContainer(leftText: "30 мин", rightText: "\(servicesPrices.videoChat)")
+                
+                Text("Чат с врачом")
+                    .padding(.top, 12)
+                servicePriceContainer(leftText: "30 мин", rightText: "\(servicesPrices.home)")
+                
+                Text("Приём в клинике")
+                    .padding(.top, 12)
+                servicePriceContainer(leftText: "В клинике", rightText: "\(servicesPrices.hospital)")
+                
+                Spacer()
                 
             }
             .padding([.leading, .trailing, .top], 16)
@@ -37,12 +58,9 @@ struct ServicesPricePage: View {
             }
             .background(.ypLightGray)
         }
-        
-        Spacer(minLength: 0)
-        TabBarController(selectedTab: $tabs)
     }
 }
 
 #Preview {
-    ServicesPricePage(tabs: .constant(.home))
+    ServicesPricePage(servicesPrices: ServicesPriceModel(videoChat: 600, home: 600, hospital: 600))
 }

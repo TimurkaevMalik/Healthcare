@@ -17,10 +17,14 @@ struct MedTableCell: View {
     let seniority: Int
     let minimumPrice: Int
     
+    let likeAction: () -> Void
+    let appointmentAction: () -> Void
+    let cellTapAction: () -> Void
+    
     var body: some View {
         
         Button {
-            print("TAP")
+            cellTapAction()
         } label: {
             
             GeometryReader { geo in
@@ -50,7 +54,7 @@ struct MedTableCell: View {
                         Spacer()
                         
                         Button {
-                            print("Like")
+                            likeAction()
                         } label: {
                             Image(.likeEmpty).frame(width: 24, height: 24)
                         }
@@ -59,8 +63,10 @@ struct MedTableCell: View {
                     }
                     .padding(.top, 20)
                     
-                    AppointmentButton(text: "Записаться")
-                        .padding([.leading, .trailing], 16)
+                    AppointmentButton(text: "Записаться") {
+                        appointmentAction()
+                    }
+                    .padding([.leading, .trailing], 16)
                     
                 }
             }
@@ -72,10 +78,13 @@ struct MedTableCell: View {
 
 #Preview {
     MedTableCell(name: "Дарья",
-                  lastName: "Семенова",
-                  patronymic: "Сергеевна",
-                  avatar: Image(systemName: "person.crop.circle"),
-                  rank: 3,
-                  seniority: 3,
-                  minimumPrice: 600)
+                 lastName: "Семенова",
+                 patronymic: "Сергеевна",
+                 avatar: Image(systemName: "person.crop.circle"),
+                 rank: 3,
+                 seniority: 3,
+                 minimumPrice: 600,
+                 likeAction: {},
+                 appointmentAction: {},
+                 cellTapAction: {})
 }

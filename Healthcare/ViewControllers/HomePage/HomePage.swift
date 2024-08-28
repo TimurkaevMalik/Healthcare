@@ -15,7 +15,7 @@ struct HomePage: View {
     
     var body: some View {
         
-        NavigationStack {
+        NavigationView {
             
             VStack(spacing: 16) {
                 
@@ -24,12 +24,22 @@ struct HomePage: View {
                     .padding(.top, 15)
                 
                 HomePageFilter(filter: filter)
-
+                
+                
+                
+                    
+                    MedTableCell(name: "osdf",
+                                 lastName: "adsffa",
+                                 patronymic: "asdff",
+                                 avatar: Image(systemName: "person"),
+                                 rank: 3,
+                                 seniority: 5,
+                                 minimumPrice: 400,
+                                 likeAction: {},
+                                 appointmentAction: {},
+                                 cellTapAction: {})
+                    
                 Spacer()
-                //                    List(0..<7) { _ in
-                //
-                //                        MedsTableCell(name: "osdf", lastName: "adsffa", patronymic: "asdff", avatar: Image(systemName: "person"), rank: 3, seniority: 5, minimumPrice: 400).background(.ypSilver)
-                //                    }
                 
             }.background(.ypLightGray)
                 .scrollContentBackground(.hidden)

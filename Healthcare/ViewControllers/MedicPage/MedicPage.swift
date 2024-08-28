@@ -22,6 +22,8 @@ struct MedicPage: View {
     let seniority: Int
     let minimumPrice: Int
     
+    let appointmentAction: () -> Void
+    
     var body: some View {
         
         NavigationStack {
@@ -61,7 +63,7 @@ struct MedicPage: View {
                 .font(.ypRegular)
                 .foregroundStyle(.ypDarkGray)
                 
-                servicePriceContainer(minimumPrice: minimumPrice)
+                servicePriceContainer(leftText: "Стоимость услуг", rightText: "от \(minimumPrice) ₽")
                     .padding(.top, 10)
                 
                 Text("Проводит диагностику и лечение терапевтических больных. Осуществляет расшифровку и снятие ЭКГ. Дает рекомендации по диетологии. Доктор имеет опыт работы в России и зарубежом. Проводит консультации пациентов на английском языке.")
@@ -71,8 +73,10 @@ struct MedicPage: View {
                 
                 Spacer(minLength: 0)
                 
-                AppointmentButton(text: "Записаться")
-                    .padding(.bottom, 10)
+                AppointmentButton(text: "Записаться") {
+                    appointmentAction()
+                }
+                .padding(.bottom, 10)
             }
             .padding([.leading, .trailing, .top], 16)
             .navigationBarTitleDisplayMode(.inline)
@@ -127,5 +131,6 @@ struct MedicShortInfo: View {
               organizations: "Больница 2",
               rank: 3,
               seniority: 3,
-              minimumPrice: 600)
+              minimumPrice: 600,
+              appointmentAction: {})
 }
