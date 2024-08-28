@@ -15,6 +15,8 @@ struct RootView: View {
     
     var body: some View {
         
+        //        VStack {
+        
         if selectedTab == .home {
             HomePage(filter: $filter)
         } else if selectedTab == .appointment {
@@ -28,8 +30,9 @@ struct RootView: View {
                 .font(.ypRegularTitle)
         }
         
-        Spacer()
+        Spacer(minLength: 0)
         TabBarController(selectedTab: $selectedTab)
+        
     }
 }
 

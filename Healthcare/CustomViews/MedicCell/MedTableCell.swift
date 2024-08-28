@@ -59,16 +59,8 @@ struct MedTableCell: View {
                     }
                     .padding(.top, 20)
                     
-                    Button(action: {
-                        print("appointment")
-                    }, label: {
-                        Text("Записаться")
-                            .tint(.ypWhite)
-                            .frame(width: geo.size.width - 32, height: 47)
-                            .background(Rectangle()
-                                .fill(.ypPink)
-                                .clipShape(.rect(cornerRadius: 8)))
-                    })
+                    AppointmentButton(text: "Записаться")
+                        .padding([.leading, .trailing], 16)
                     
                 }
             }
@@ -76,6 +68,7 @@ struct MedTableCell: View {
         }
     }
 }
+
 
 #Preview {
     MedTableCell(name: "Дарья",
