@@ -13,9 +13,11 @@ struct HomePage: View {
     @Binding var filter: Filter
     @State var searchText = ""
     
+    let servicesPrice: ServicesPriceModel
+    
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             
             VStack(spacing: 16) {
                 
@@ -25,20 +27,17 @@ struct HomePage: View {
                 
                 HomePageFilter(filter: filter)
                 
+                MedTableCell(name: "osdf",
+                             lastName: "adsffa",
+                             patronymic: "asdff",
+                             avatar: Image(systemName: "person"),
+                             rank: 3,
+                             seniority: 5,
+                             minimumPrice: 400,
+                             servicesPrice: servicesPrice,
+                             likeAction: {},
+                             cellTapAction: {})
                 
-                
-                    
-                    MedTableCell(name: "osdf",
-                                 lastName: "adsffa",
-                                 patronymic: "asdff",
-                                 avatar: Image(systemName: "person"),
-                                 rank: 3,
-                                 seniority: 5,
-                                 minimumPrice: 400,
-                                 likeAction: {},
-                                 appointmentAction: {},
-                                 cellTapAction: {})
-                    
                 Spacer()
                 
             }.background(.ypLightGray)
@@ -64,5 +63,8 @@ struct HomePage: View {
 }
 
 #Preview {
-    HomePage(filter: .constant(.price))
+    HomePage(filter: .constant(.price), servicesPrice:
+                ServicesPriceModel(videoChat: 600,
+                                   home: 600,
+                                   hospital: 600))
 }

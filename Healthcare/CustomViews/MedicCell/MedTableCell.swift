@@ -16,9 +16,8 @@ struct MedTableCell: View {
     let rank: Int
     let seniority: Int
     let minimumPrice: Int
-    
+    let servicesPrice: ServicesPriceModel
     let likeAction: () -> Void
-    let appointmentAction: () -> Void
     let cellTapAction: () -> Void
     
     var body: some View {
@@ -63,10 +62,9 @@ struct MedTableCell: View {
                     }
                     .padding(.top, 20)
                     
-                    AppointmentButton(text: "Записаться") {
-                        appointmentAction()
-                    }
-                    .padding([.leading, .trailing], 16)
+                    AppointmentButton(text: "Записаться", servicesPrices: servicesPrice)
+                        .frame(height: 47)
+                        .padding([.leading, .trailing], 16)
                     
                 }
             }
@@ -84,7 +82,9 @@ struct MedTableCell: View {
                  rank: 3,
                  seniority: 3,
                  minimumPrice: 600,
+                 servicesPrice: ServicesPriceModel(videoChat: 600,
+                                                   home: 600,
+                                                   hospital: 600),
                  likeAction: {},
-                 appointmentAction: {},
                  cellTapAction: {})
 }

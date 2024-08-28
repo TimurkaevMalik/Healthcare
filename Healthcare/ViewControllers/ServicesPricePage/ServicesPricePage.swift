@@ -16,6 +16,8 @@ struct ServicesPriceModel {
 
 struct ServicesPricePage: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     let servicesPrices: ServicesPriceModel
     
     var body: some View {
@@ -41,10 +43,12 @@ struct ServicesPricePage: View {
             }
             .padding([.leading, .trailing, .top], 16)
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
                         print("Did tab back button")
+                        dismiss()
                     } label: {
                         Image(.arrowBack)
                             .frame(width: 12, height: 20.5)

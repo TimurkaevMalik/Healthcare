@@ -21,8 +21,7 @@ struct MedicPage: View {
     let rank: Int
     let seniority: Int
     let minimumPrice: Int
-    
-    let appointmentAction: () -> Void
+    let servicesPrice: ServicesPriceModel
     
     var body: some View {
         
@@ -73,10 +72,8 @@ struct MedicPage: View {
                 
                 Spacer(minLength: 0)
                 
-                AppointmentButton(text: "Записаться") {
-                    appointmentAction()
-                }
-                .padding(.bottom, 10)
+                AppointmentButton(text: "Записаться", servicesPrices: servicesPrice)
+                    .padding(.bottom, 10)
             }
             .padding([.leading, .trailing, .top], 16)
             .navigationBarTitleDisplayMode(.inline)
@@ -132,5 +129,7 @@ struct MedicShortInfo: View {
               rank: 3,
               seniority: 3,
               minimumPrice: 600,
-              appointmentAction: {})
+              servicesPrice: ServicesPriceModel(videoChat: 600,
+                                                home: 600,
+                                                hospital: 600))
 }
