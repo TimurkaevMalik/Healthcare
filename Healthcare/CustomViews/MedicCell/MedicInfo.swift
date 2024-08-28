@@ -27,7 +27,7 @@ struct MedicInfo: View {
                 .multilineTextAlignment(.leading)
                 .frame(height: 50)
                 .font(.ypSemiBold)
-                .tint(.ypBlack)
+                .foregroundStyle(.ypBlack)
             
             if rank > 5 {
                 let rank = 5
@@ -41,11 +41,11 @@ struct MedicInfo: View {
             
             
             Text("\(profession) ・ стаж \(seniority) лет")
-                .tint(.ypDarkGray)
+                .foregroundStyle(.ypDarkGray)
                 .font(.ypRegular)
             
             Text("От \(minimumPrice)")
-                .tint(.ypBlack)
+                .foregroundStyle(.ypBlack)
                 .font(.ypSemiBold)
         }
     }

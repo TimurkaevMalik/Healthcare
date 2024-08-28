@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MedicPage: View {
     
-    @Binding var tabs: Tabs
+    @Environment(\.dismiss) private var dismiss
     
     let name: String
     let lastName: String
@@ -35,6 +35,7 @@ struct MedicPage: View {
                         .resizable()
                         .tint(.ypDarkGray)
                         .frame(width: 50)
+                        .clipShape(.rect(cornerRadius: 25))
                     
                     Text(lastName + "\n" + name + " " + patronymic)
                         .lineSpacing(1)
@@ -77,10 +78,11 @@ struct MedicPage: View {
             }
             .padding([.leading, .trailing, .top], 16)
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
-                        print("Did tab back button")
+                        dismiss()
                     } label: {
                         Image(.arrowBack)
                             .frame(width: 12, height: 20.5)
@@ -94,9 +96,6 @@ struct MedicPage: View {
             }
             .background(.ypLightGray)
         }
-        
-        Spacer(minLength: 0)
-        TabBarController(selectedTab: $tabs)
     }
 }
 
@@ -118,11 +117,10 @@ struct MedicShortInfo: View {
 }
 
 #Preview {
-    MedicPage(tabs: .constant(.home),
-              name: "Дарья",
+    MedicPage(name: "Дарья",
               lastName: "Семенова",
               patronymic: "Сергеевна",
-              avatar: Image(systemName: "person.crop.circle"),
+              avatar: Image(.realAvatar),
               category: "высшая",
               university: "литьии",
               organizations: "Больница 2",

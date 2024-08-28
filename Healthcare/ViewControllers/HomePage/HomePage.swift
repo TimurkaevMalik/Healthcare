@@ -30,13 +30,15 @@ struct HomePage: View {
                 MedTableCell(name: "osdf",
                              lastName: "adsffa",
                              patronymic: "asdff",
-                             avatar: Image(systemName: "person"),
+                             avatar: Image(.realAvatar),
                              rank: 3,
                              seniority: 5,
                              minimumPrice: 400,
+                             category: "category",
+                             university: "university",
+                             organizations: "organizations",
                              servicesPrice: servicesPrice,
-                             likeAction: {},
-                             cellTapAction: {})
+                             likeAction: {})
                 
                 Spacer()
                 
