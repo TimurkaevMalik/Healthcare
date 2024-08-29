@@ -18,7 +18,7 @@ struct ServicesPricePage: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    let servicesPrices: ServicesPriceModel
+    let servicesPrice: ServicesPriceModel
     
     var body: some View {
         
@@ -28,15 +28,15 @@ struct ServicesPricePage: View {
                 
                 Text("Видеоконсультация")
                     .padding(.top, 4)
-                servicePriceContainer(leftText: "30 мин", rightText: "\(servicesPrices.videoChat)")
+                servicePriceContainer(leftText: "30 мин", rightText: "\(servicesPrice.videoChat)")
                 
                 Text("Чат с врачом")
                     .padding(.top, 12)
-                servicePriceContainer(leftText: "30 мин", rightText: "\(servicesPrices.home)")
+                servicePriceContainer(leftText: "30 мин", rightText: "\(servicesPrice.home)")
                 
                 Text("Приём в клинике")
                     .padding(.top, 12)
-                servicePriceContainer(leftText: "В клинике", rightText: "\(servicesPrices.hospital)")
+                servicePriceContainer(leftText: "В клинике", rightText: "\(servicesPrice.hospital)")
                 
                 Spacer()
                 
@@ -66,5 +66,5 @@ struct ServicesPricePage: View {
 }
 
 #Preview {
-    ServicesPricePage(servicesPrices: ServicesPriceModel(videoChat: 600, home: 600, hospital: 600))
+    ServicesPricePage(servicesPrice: ServicesPriceModel(videoChat: 600, home: 600, hospital: 600))
 }

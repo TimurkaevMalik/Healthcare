@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct HomePage: View {
     
     @Binding var filter: Filter
@@ -27,18 +26,11 @@ struct HomePage: View {
                 
                 HomePageFilter(filter: filter)
                 
-                MedTableCell(name: "osdf",
-                             lastName: "adsffa",
-                             patronymic: "asdff",
-                             avatar: Image(.realAvatar),
-                             rank: 3,
-                             seniority: 5,
-                             minimumPrice: 400,
-                             category: "category",
-                             university: "university",
-                             organizations: "organizations",
-                             servicesPrice: servicesPrice,
-                             likeAction: {})
+                ScrollView {
+                    MedicsGrid()
+                }
+                .padding(.bottom, -24)
+                .padding(.top, -10)
                 
                 Spacer()
                 
@@ -63,6 +55,7 @@ struct HomePage: View {
         }
     }
 }
+
 
 #Preview {
     HomePage(filter: .constant(.price), servicesPrice:

@@ -1,5 +1,5 @@
 //
-//  MedicInfo.swift
+//  MedicCellInfo.swift
 //  Healthcare
 //
 //  Created by Malik Timurkaev on 27.08.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MedicInfo: View {
+struct MedicCellInfo: View {
     
     let name: String
     let lastName: String
@@ -75,7 +75,7 @@ struct Rank: View {
 }
 
 #Preview {
-    MedicInfo(name: "Дарья",
+    MedicCellInfo(name: "Дарья",
               lastName: "Семенова",
               patronymic: "Сергеевна",
               rank: 3,

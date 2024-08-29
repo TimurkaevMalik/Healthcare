@@ -10,7 +10,7 @@ import SwiftUI
 struct TabBarItem: View {
     
     let imageName: String
-    let itemText: String?
+    let itemText: String
     let isActive: Bool
     let selectionColor: Color
     let action: () -> Void
@@ -30,14 +30,14 @@ struct TabBarItem: View {
                         .foregroundStyle(isActive == true ? selectionColor : .ypDarkGray)
                         .frame(width: 32, height: 32)
                     
-                    if let itemText {
-                        Text(itemText)
-                            .foregroundStyle(.ypDarkGray)
-                            .font(Font.tabBar)
-                    }
+                    
+                    Text(itemText)
+                        .foregroundStyle(.ypDarkGray)
+                        .font(Font.tabBar)
+                    
                 }
                 .frame(width: geo.size.width, height: geo.size.height)
-            }.frame(height: 83)
+            }
         }
     }
 }

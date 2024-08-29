@@ -13,9 +13,10 @@ struct TabBarController: View {
     @Binding var selectedTab: Tabs
     
     var body: some View {
+        Spacer()
         
         VStack(spacing: 0){
-            
+        
             Rectangle()
                 .frame(height: 0.8)
                 .tint(.ypSilver)
@@ -39,9 +40,10 @@ struct TabBarController: View {
                     selectedTab = .profile
                 }
             }
-            
         }
         .frame(height: 83)
+        .padding(.bottom, -22)
+        .background(Color.ypWhite)
     }
 }
 

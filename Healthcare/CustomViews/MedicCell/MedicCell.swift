@@ -1,5 +1,5 @@
 //
-//  MedTableCell.swift
+//  MedicCell.swift
 //  Healthcare
 //
 //  Created by Malik Timurkaev on 24.08.2024.
@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct MedTableCell: View {
+struct MedicCell: View, Identifiable {
     
+    let id = UUID()
     let name: String
     let lastName: String
     let patronymic: String
@@ -56,7 +57,7 @@ struct MedTableCell: View {
                             .clipShape(.rect(cornerRadius: 25))
                             .padding(.leading, 16)
                         
-                        MedicInfo(name: name,
+                        MedicCellInfo(name: name,
                                   lastName: lastName,
                                   patronymic: patronymic,
                                   rank: rank,
@@ -75,8 +76,7 @@ struct MedTableCell: View {
                     }
                     .padding(.top, 20)
                     
-                    AppointmentButton(text: "Записаться", servicesPrices: servicesPrice)
-                        .frame(height: 47)
+                    AppointmentButton(text: "Записаться", servicesPrice: servicesPrice)
                         .padding([.leading, .trailing], 16)
                     
                 }
@@ -89,7 +89,7 @@ struct MedTableCell: View {
 
 
 #Preview {
-    MedTableCell(name: "Дарья",
+    MedicCell(name: "Дарья",
                  lastName: "Семенова",
                  patronymic: "Сергеевна",
                  avatar: Image(.realAvatar),

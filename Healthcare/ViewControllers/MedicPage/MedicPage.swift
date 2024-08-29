@@ -73,7 +73,7 @@ struct MedicPage: View {
                 
                 Spacer(minLength: 0)
                 
-                AppointmentButton(text: "Записаться", servicesPrices: servicesPrice)
+                AppointmentButton(text: "Записаться", servicesPrice: servicesPrice)
                     .padding(.bottom, 10)
             }
             .padding([.leading, .trailing, .top], 16)

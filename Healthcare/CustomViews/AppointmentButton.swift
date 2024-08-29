@@ -10,15 +10,15 @@ import SwiftUI
 struct AppointmentButton: View {
     
     let text: String
-    let servicesPrices: ServicesPriceModel
+    let servicesPrice: ServicesPriceModel
     
     var body: some View {
         
-        NavigationLink(destination: ServicesPricePage(servicesPrices: servicesPrices)) {
+        NavigationLink(destination: ServicesPricePage(servicesPrice: servicesPrice)) {
             
             ZStack {
                 
-                Rectangle().frame(height: 60).foregroundStyle(Color.ypPink)
+                Rectangle().frame(height: 47).foregroundStyle(Color.ypPink)
                     .clipShape(.rect(cornerRadius: 8))
                 
                 Text(text)
@@ -30,7 +30,7 @@ struct AppointmentButton: View {
 
 
 #Preview {
-    AppointmentButton(text: "Записаться", servicesPrices:
+    AppointmentButton(text: "Записаться", servicesPrice:
                         ServicesPriceModel(videoChat: 600,
                                            home: 600,
                                            hospital: 600))

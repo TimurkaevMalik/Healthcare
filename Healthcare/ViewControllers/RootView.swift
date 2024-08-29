@@ -15,27 +15,34 @@ struct RootView: View {
     
     var body: some View {
         
-        //        VStack {
-        
-        if selectedTab == .home {
-            HomePage(filter: $filter, servicesPrice:
-                        ServicesPriceModel(videoChat: 600,
-                                           home: 600,
-                                           hospital: 600))
-        } else if selectedTab == .appointment {
-            Text("Приемы")
-                .font(.ypRegularTitle)
-        } else if selectedTab == .chat {
-            Text("Чат")
-                .font(.ypRegularTitle)
-        } else if selectedTab == .profile {
-            Text("Профиль")
-                .font(.ypRegularTitle)
+        VStack(spacing: 0) {
+            
+            if selectedTab == .home {
+                
+                HomePage(filter: $filter, servicesPrice:
+                            ServicesPriceModel(videoChat: 600,
+                                               home: 600,
+                                               hospital: 600))
+                .padding(.bottom, -10)
+                
+            } else if selectedTab == .appointment {
+                Text("Приемы")
+                    .font(.ypRegularTitle)
+            } else if selectedTab == .chat {
+                Text("Чат")
+                    .font(.ypRegularTitle)
+            } else if selectedTab == .profile {
+                Text("Профиль")
+                    .font(.ypRegularTitle)
+            }
+            
+            
+            
+            Spacer(minLength: 0)
+            
+            TabBarController(selectedTab: $selectedTab)
         }
-        
-        Spacer(minLength: 0)
-        TabBarController(selectedTab: $selectedTab)
-        
+        .background(Color.ypLightGray)
     }
 }
 
