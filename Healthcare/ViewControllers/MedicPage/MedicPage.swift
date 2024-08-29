@@ -11,19 +11,11 @@ struct MedicPage: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    let name: String
-    let lastName: String
-    let patronymic: String
-    let avatar: Image
-    let category: String
-    let university: String
-    let organizations: String
-    let rank: Int
-    let seniority: Int
-    let minimumPrice: Int
-    let servicesPrice: ServicesPrice
+    let medic: Medic
     
     var body: some View {
+        
+        let servicesPrice = ServicesPrice( videoChat: medic.videoChat, home: medic.home, hospital: medic.hospital)
         
         NavigationStack {
             
@@ -31,13 +23,9 @@ struct MedicPage: View {
                 
                 HStack(alignment: .top, spacing: 16) {
                     
-                    avatar
-                        .resizable()
-                        .tint(.ypDarkGray)
-                        .frame(width: 50)
-                        .clipShape(.rect(cornerRadius: 25))
+                    URLAvatar(avatarUrl: medic.avatar)
                     
-                    Text(lastName + "\n" + name + " " + patronymic)
+                    Text(medic.lastName + "\n" + medic.name + " " + medic.patronymic)
                         .lineSpacing(1)
                         .lineLimit(3)
                         .multilineTextAlignment(.leading)
@@ -51,19 +39,23 @@ struct MedicPage: View {
                 
                 VStack(alignment: .leading, spacing: 10){
                     
-                    MedicShortInfo(image: Image(.clock), text: "Опыт работы: \(seniority) лет")
+                    MedicShortInfo(image: Image(.clock), text: "Опыт работы: \(medic.seniority) лет")
                     
-                    MedicShortInfo(image: Image(.suitcase), text: "Врач \(category) категории")
+                    MedicShortInfo(image: Image(.suitcase), text: "Врач \(medic.category.lowercased()) категории")
                     
+                    if let university = medic.education.first?.university {
                     MedicShortInfo(image: Image(.hatAcademic), text: university)
+                    }
                     
-                    MedicShortInfo(image: Image(.geopoint), text: organizations)
+                    if let oraganization = medic.workExpirience.first?.organization {
+                        MedicShortInfo(image: Image(.geopoint), text: oraganization)
+                    }
                 }
                 .padding(.top, 4)
                 .font(.ypRegular)
                 .foregroundStyle(.ypDarkGray)
                 
-                servicePriceContainer(leftText: "Стоимость услуг", rightText: "от \(minimumPrice) ₽")
+                servicePriceContainer(leftText: "Стоимость услуг", rightText: "от \(servicesPrice.minimumPrice) ₽")
                     .padding(.top, 10)
                 
                 Text("Проводит диагностику и лечение терапевтических больных. Осуществляет расшифровку и снятие ЭКГ. Дает рекомендации по диетологии. Доктор имеет опыт работы в России и зарубежом. Проводит консультации пациентов на английском языке.")
@@ -97,37 +89,45 @@ struct MedicPage: View {
             .background(.ypLightGray)
         }
     }
-}
-
-struct MedicShortInfo: View {
     
-    let image: Image
-    let text: String
-    
-    var body: some View {
+    struct MedicShortInfo: View {
         
-        HStack(spacing: 12) {
+        let image: Image
+        let text: String
+        
+        var body: some View {
             
-            image
-            Text(text)
+            HStack(spacing: 12) {
+                
+                image
+                Text(text)
+            }
+            .frame(height: 24)
+            .tint(.ypDarkGray)
         }
-        .frame(height: 24)
-        .tint(.ypDarkGray)
     }
 }
 
-#Preview {
-    MedicPage(name: "Дарья",
-              lastName: "Семенова",
-              patronymic: "Сергеевна",
-              avatar: Image(.realAvatar),
-              category: "высшая",
-              university: "литьии",
-              organizations: "Больница 2",
-              rank: 3,
-              seniority: 3,
-              minimumPrice: 600,
-              servicesPrice: ServicesPrice(videoChat: 600,
-                                                home: 600,
-                                                hospital: 600))
+
+struct MedicPage_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        
+        let education = [Education(university: "литьии")]
+        let workExpirience = [WorkExpirience(organization: "Больница 1")]
+        let avatarUrl = "https://media.istockphoto.com/id/1372002650/photo/cropped-portrait-of-an-attractive-young-female-doctor-standing-with-her-arms-folded-in-the.jpg?s=1024x1024&w=is&k=20&c=HwRi4NnrK9aKEC27BkXnJJfuggGABNmqnnmXL7D9aBs="
+        
+        MedicPage(medic: Medic(name: "Дарья",
+                               lastName: "Семенова",
+                               patronymic: "Сергеевна",
+                               avatar: avatarUrl,
+                               rating: 3,
+                               seniority: 4,
+                               education: education,
+                               workExpirience: workExpirience,
+                               category: "Высшая",
+                               videoChat: 400,
+                               home: 600,
+                               hospital: 300))
+    }
 }

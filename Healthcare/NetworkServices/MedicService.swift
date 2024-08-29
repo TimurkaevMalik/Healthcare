@@ -16,39 +16,41 @@ final class MedicService {
         
         assert(Thread.isMainThread)
         
-        if let task {
-            task.cancel()
+        if task != nil {
+            task?.cancel()
         }
         
         guard let request = makeRequestBody() else {
             return
         }
         
-        let session = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+        let session = URLSession.shared.dataTask(with: request) { data, response, error in
             
-            guard let self else { return }
             
-            if let error = error as? NSError {
+            DispatchQueue.main.async {  
                 
-                completion(.failure(.codeError("\(error)")))
-                return
-            }
-            
-            if let response = response as? HTTPURLResponse,
-               response.statusCode < 200 || response.statusCode >= 300 {
-                
-                completion(.failure(.responseError("\(response.statusCode)")))
-                return
-            }
-            
-            if let data {
-                
-                do {
-                    let medicResult = try JSONDecoder().decode(MedicData.self, from: data)
+                if let error = error as? NSError {
                     
-                    completion(.success(medicResult))
-                } catch let error{
-                    completion(.failure(.codeError(error.localizedDescription)))
+                    completion(.failure(.codeError("\(error)")))
+                    return
+                }
+                
+                if let response = response as? HTTPURLResponse,
+                   response.statusCode < 200 || response.statusCode >= 300 {
+                    
+                    completion(.failure(.responseError("\(response.statusCode)")))
+                    return
+                }
+                
+                if let data {
+                    
+                    do {
+                        let medicResult = try JSONDecoder().decode(MedicData.self, from: data)
+                        
+                        completion(.success(medicResult))
+                    } catch let error{
+                        completion(.failure(.codeError(error.localizedDescription)))
+                    }
                 }
             }
         }

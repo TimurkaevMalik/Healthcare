@@ -10,34 +10,15 @@ import SwiftUI
 struct MedicCell: View, Identifiable {
     
     let id = UUID()
-    let name: String
-    let lastName: String
-    let patronymic: String
-    let avatar: Image
-    let rank: Int
-    let seniority: Int
-    let minimumPrice: Int
-    let category: String
-    let university: String
-    let organizations: String
-    let servicesPrice: ServicesPrice
+    let medic: Medic
     
     let likeAction: () -> Void
     
     var body: some View {
         
-        NavigationLink(destination:
-                        MedicPage(name: name,
-                                  lastName: lastName,
-                                  patronymic: patronymic,
-                                  avatar: avatar,
-                                  category: category,
-                                  university: university,
-                                  organizations: organizations,
-                                  rank: rank,
-                                  seniority: seniority,
-                                  minimumPrice: minimumPrice,
-                                  servicesPrice: servicesPrice)){
+        let servicesPrice = ServicesPrice( videoChat: medic.videoChat, home: medic.home, hospital: medic.hospital)
+        
+        NavigationLink(destination: MedicPage(medic: medic)) {
             
             GeometryReader { geo in
                 
@@ -50,19 +31,16 @@ struct MedicCell: View, Identifiable {
                 VStack(spacing: 15) {
                     HStack(alignment: .top, spacing: 16) {
                         
-                        avatar
-                            .resizable()
-                            .foregroundStyle(.ypPink)
-                            .frame(width: 50, height: 50)
-                            .clipShape(.rect(cornerRadius: 25))
+                        URLAvatar(avatarUrl: medic.avatar)
                             .padding(.leading, 16)
                         
-                        MedicCellInfo(name: name,
-                                  lastName: lastName,
-                                  patronymic: patronymic,
-                                  rank: rank,
-                                  seniority: seniority,
-                                  minimumPrice: minimumPrice)
+                        MedicCellInfo(name: medic.name,
+                                      lastName: medic.lastName,
+                                      patronymic: medic.patronymic,
+                                      rating: medic.rating,
+                                      seniority: medic.seniority,
+                                      minimumPrice:
+                                        servicesPrice.minimumPrice)
                         
                         Spacer()
                         
@@ -88,19 +66,27 @@ struct MedicCell: View, Identifiable {
 
 
 
-#Preview {
-    MedicCell(name: "Дарья",
-                 lastName: "Семенова",
-                 patronymic: "Сергеевна",
-                 avatar: Image(.realAvatar),
-                 rank: 3,
-                 seniority: 3,
-                 minimumPrice: 600,
-                 category: "category",
-                 university: "university",
-                 organizations: "organizations",
-                 servicesPrice: ServicesPrice(videoChat: 600,
-                                                   home: 600,
-                                                   hospital: 600),
-                 likeAction: {})
+struct MedicCell_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        
+        let education = [Education(university: "литьии")]
+        let workExpirience = [WorkExpirience(organization: "Больница 1")]
+        let avatarUrl = "https://media.istockphoto.com/id/1372002650/photo/cropped-portrait-of-an-attractive-young-female-doctor-standing-with-her-arms-folded-in-the.jpg?s=1024x1024&w=is&k=20&c=HwRi4NnrK9aKEC27BkXnJJfuggGABNmqnnmXL7D9aBs="
+        
+        
+        MedicCell(medic: Medic(name: "Дарья",
+                               lastName: "Семенова",
+                               patronymic: "Сергеевна",
+                               avatar: avatarUrl,
+                               rating: 3,
+                               seniority: 4,
+                               education: education,
+                               workExpirience: workExpirience,
+                               category: "Высшая",
+                               videoChat: 400,
+                               home: 600,
+                               hospital: 300),
+                  likeAction: {})
+    }
 }

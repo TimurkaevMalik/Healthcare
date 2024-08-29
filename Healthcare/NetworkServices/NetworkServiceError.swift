@@ -11,5 +11,5 @@ import Foundation
 enum NetworwServiceError: Error {
     case codeError(_ value: String)
     case responseError(_ value: String)
-    case invalidRequesr(_ value: String)
+    case invalidRequest(_ value: String)
 }

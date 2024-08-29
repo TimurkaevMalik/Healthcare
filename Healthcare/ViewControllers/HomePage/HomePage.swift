@@ -27,7 +27,7 @@ struct HomePage: View {
                 HomePageFilter(filter: filter)
                 
                 ScrollView {
-                    MedicsGrid()
+//                    MedicsGrid()
                 }
                 .padding(.bottom, -24)
                 .padding(.top, -10)

@@ -22,7 +22,7 @@ struct Medic: Decodable {
     let lastName: String
     let patronymic: String
     let avatar: String?
-    let rank: Int
+    let rating: Float
     let seniority: Int
     let education: [Education]
     let workExpirience: [WorkExpirience]
@@ -37,7 +37,7 @@ struct Medic: Decodable {
         case lastName = "last_name"
         case patronymic = "patronymic"
         case avatar = "avatar"
-        case rank = "rank"
+        case rating = "ratings_rating"
         case seniority = "seniority"
         case videoChat = "video_chat_price"
         case home = "home_price"

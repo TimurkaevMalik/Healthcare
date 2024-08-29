@@ -12,7 +12,7 @@ struct MedicCellInfo: View {
     let name: String
     let lastName: String
     let patronymic: String
-    let rank: Int
+    let rating: Float
     let seniority: Int
     let minimumPrice: Int
     private let profession = "Педиатр"
@@ -29,14 +29,14 @@ struct MedicCellInfo: View {
                 .font(.ypSemiBold)
                 .foregroundStyle(.ypBlack)
             
-            if rank > 5 {
-                let rank = 5
-                Rank(rank: rank)
-            } else if rank < 0 {
-                let rank = 0
-                Rank(rank: rank)
+            if rating > 5 {
+                let rating = 5
+                Rating(rating: rating)
+            } else if rating < 0 {
+                let rating = 0
+                Rating(rating: rating)
             } else {
-                Rank(rank: rank)
+                Rating(rating: rating.roundedToInt())
             }
             
             
@@ -51,21 +51,21 @@ struct MedicCellInfo: View {
     }
 }
 
-struct Rank: View {
+struct Rating: View {
     
-    let rank: Int
+    let rating: Int
     
     var body: some View {
         
         HStack(spacing: 2.4) {
             
-            ForEach(0..<rank, id: \.self) { _ in
+            ForEach(0..<rating, id: \.self) { _ in
                 Image(.starFill)
                     .resizable()
                     .frame(width: 12, height: 12)
             }
             
-            ForEach(rank..<5, id: \.self) { _ in
+            ForEach(rating..<5, id: \.self) { _ in
                 Image(.starEmpty)
                     .resizable()
                     .frame(width: 12, height: 12)
@@ -78,7 +78,7 @@ struct Rank: View {
     MedicCellInfo(name: "Дарья",
               lastName: "Семенова",
               patronymic: "Сергеевна",
-              rank: 3,
+                  rating: 3.5,
               seniority: 3,
               minimumPrice: 600)
 }
