@@ -56,7 +56,7 @@ extension Color {
 
 struct MockDataMed{
     
-    static let servicesPrice = ServicesPriceModel(
+    static let servicesPrice = ServicesPrice(
         videoChat: 600,
         home: 300,
         hospital: 400)

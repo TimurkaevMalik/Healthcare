@@ -10,7 +10,7 @@ import SwiftUI
 struct AppointmentButton: View {
     
     let text: String
-    let servicesPrice: ServicesPriceModel
+    let servicesPrice: ServicesPrice
     
     var body: some View {
         
@@ -31,7 +31,7 @@ struct AppointmentButton: View {
 
 #Preview {
     AppointmentButton(text: "Записаться", servicesPrice:
-                        ServicesPriceModel(videoChat: 600,
+                        ServicesPrice(videoChat: 600,
                                            home: 600,
                                            hospital: 600))
 }

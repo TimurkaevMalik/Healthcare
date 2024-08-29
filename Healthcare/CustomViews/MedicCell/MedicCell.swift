@@ -20,7 +20,7 @@ struct MedicCell: View, Identifiable {
     let category: String
     let university: String
     let organizations: String
-    let servicesPrice: ServicesPriceModel
+    let servicesPrice: ServicesPrice
     
     let likeAction: () -> Void
     
@@ -99,7 +99,7 @@ struct MedicCell: View, Identifiable {
                  category: "category",
                  university: "university",
                  organizations: "organizations",
-                 servicesPrice: ServicesPriceModel(videoChat: 600,
+                 servicesPrice: ServicesPrice(videoChat: 600,
                                                    home: 600,
                                                    hospital: 600),
                  likeAction: {})

@@ -21,7 +21,7 @@ struct MedicPage: View {
     let rank: Int
     let seniority: Int
     let minimumPrice: Int
-    let servicesPrice: ServicesPriceModel
+    let servicesPrice: ServicesPrice
     
     var body: some View {
         
@@ -127,7 +127,7 @@ struct MedicShortInfo: View {
               rank: 3,
               seniority: 3,
               minimumPrice: 600,
-              servicesPrice: ServicesPriceModel(videoChat: 600,
+              servicesPrice: ServicesPrice(videoChat: 600,
                                                 home: 600,
                                                 hospital: 600))
 }

@@ -12,7 +12,7 @@ struct HomePage: View {
     @Binding var filter: Filter
     @State var searchText = ""
     
-    let servicesPrice: ServicesPriceModel
+    let servicesPrice: ServicesPrice
     
     var body: some View {
         
@@ -59,7 +59,7 @@ struct HomePage: View {
 
 #Preview {
     HomePage(filter: .constant(.price), servicesPrice:
-                ServicesPriceModel(videoChat: 600,
+                ServicesPrice(videoChat: 600,
                                    home: 600,
                                    hospital: 600))
 }

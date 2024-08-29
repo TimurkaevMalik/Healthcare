@@ -8,17 +8,11 @@
 import SwiftUI
 
 
-struct ServicesPriceModel {
-    let videoChat: Int
-    let home: Int
-    let hospital: Int
-}
-
 struct ServicesPricePage: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    let servicesPrice: ServicesPriceModel
+    let servicesPrice: ServicesPrice
     
     var body: some View {
         
@@ -66,5 +60,5 @@ struct ServicesPricePage: View {
 }
 
 #Preview {
-    ServicesPricePage(servicesPrice: ServicesPriceModel(videoChat: 600, home: 600, hospital: 600))
+    ServicesPricePage(servicesPrice: ServicesPrice(videoChat: 600, home: 600, hospital: 600))
 }

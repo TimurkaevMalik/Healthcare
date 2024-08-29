@@ -15,7 +15,7 @@ struct MedicCellInfo: View {
     let rank: Int
     let seniority: Int
     let minimumPrice: Int
-    let profession = "Педиатр"
+    private let profession = "Педиатр"
     
     var body: some View {
         

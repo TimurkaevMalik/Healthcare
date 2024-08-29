@@ -10,6 +10,8 @@ import SwiftUI
 
 struct RootView: View {
     
+    let medicService = MedicService()
+    
     @State var selectedTab: Tabs = .home
     @State var filter: Filter = .price
     
@@ -20,7 +22,7 @@ struct RootView: View {
             if selectedTab == .home {
                 
                 HomePage(filter: $filter, servicesPrice:
-                            ServicesPriceModel(videoChat: 600,
+                            ServicesPrice(videoChat: 600,
                                                home: 600,
                                                hospital: 600))
                 .padding(.bottom, -10)
@@ -41,8 +43,24 @@ struct RootView: View {
             Spacer(minLength: 0)
             
             TabBarController(selectedTab: $selectedTab)
+                .onAppear {
+                    fetchMedicsData()
+                }
         }
         .background(Color.ypLightGray)
+    }
+    
+    func fetchMedicsData() {
+        
+        medicService.fetchMedics { result in
+            
+            switch result {
+            case .success(let success):
+                print(success)
+            case .failure(let failure):
+                print(failure)
+            }
+        }
     }
 }
 
