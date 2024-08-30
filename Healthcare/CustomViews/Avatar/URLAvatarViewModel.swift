@@ -8,7 +8,7 @@
 import Foundation
 
 
-class URLAvatarViewModel: ObservableObject {
+final class URLAvatarViewModel: ObservableObject {
     
     @Published var image: URLImageModel?
     
@@ -22,8 +22,8 @@ class URLAvatarViewModel: ObservableObject {
                 
             case .success(let data):
                 self.image = URLImageModel(imageData: data)
-            case .failure(let failure):
-                print(failure)
+            case .failure:
+                break
             }
         }
     }

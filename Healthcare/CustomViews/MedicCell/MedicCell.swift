@@ -40,7 +40,7 @@ struct MedicCell: View, Identifiable {
                                       rating: medic.rating,
                                       seniority: medic.seniority,
                                       minimumPrice:
-                                        servicesPrice.minimumPrice)
+                                        servicesPrice.minPrice)
                         
                         Spacer()
                         
@@ -54,7 +54,7 @@ struct MedicCell: View, Identifiable {
                     }
                     .padding(.top, 20)
                     
-                    AppointmentButton(text: "Записаться", servicesPrice: servicesPrice)
+                    AppointmentButton(servicesPrice: servicesPrice)
                         .padding([.leading, .trailing], 16)
                     
                 }

@@ -13,7 +13,9 @@ struct ServicesPrice {
     let videoChat: Int
     let home: Int
     let hospital: Int
-    let minimumPrice: Int
+    
+    let minPrice: Int
+    let maxPrice: Int
     
     init(videoChat: Int, home: Int, hospital: Int) {
         self.videoChat = videoChat
@@ -21,6 +23,9 @@ struct ServicesPrice {
         self.hospital = hospital
         
         let prices = [videoChat, home, hospital].sorted { $0 < $1 }
-        self.minimumPrice = prices[0]
+        
+        self.minPrice =  prices.first ?? 0
+        self.maxPrice = !prices.isEmpty ? prices[prices.count - 1] : 0
+        
     }
 }

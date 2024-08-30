@@ -19,6 +19,7 @@
 		BC82FD622C80B4240058C91E /* URLAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82FD612C80B4240058C91E /* URLAvatar.swift */; };
 		BC9512112C7D8AFC0049D71D /* MedicPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9512102C7D8AFC0049D71D /* MedicPage.swift */; };
 		BC9512132C7D91B10049D71D /* MedicCellInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9512122C7D91B10049D71D /* MedicCellInfo.swift */; };
+		BCAACF102C817A0A003BCB1E /* MedicsGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAACF0F2C817A0A003BCB1E /* MedicsGridViewModel.swift */; };
 		BCC0566B2C7F4656002D6765 /* ServicePriceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0566A2C7F4656002D6765 /* ServicePriceContainer.swift */; };
 		BCC0566D2C7F48C0002D6765 /* AppointmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0566C2C7F48C0002D6765 /* AppointmentButton.swift */; };
 		BCC056702C7F4C4A002D6765 /* ServicesPricePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0566F2C7F4C4A002D6765 /* ServicesPricePage.swift */; };
@@ -51,6 +52,7 @@
 		BC82FD612C80B4240058C91E /* URLAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLAvatar.swift; sourceTree = "<group>"; };
 		BC9512102C7D8AFC0049D71D /* MedicPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicPage.swift; sourceTree = "<group>"; };
 		BC9512122C7D91B10049D71D /* MedicCellInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicCellInfo.swift; sourceTree = "<group>"; };
+		BCAACF0F2C817A0A003BCB1E /* MedicsGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicsGridViewModel.swift; sourceTree = "<group>"; };
 		BCC0566A2C7F4656002D6765 /* ServicePriceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePriceContainer.swift; sourceTree = "<group>"; };
 		BCC0566C2C7F48C0002D6765 /* AppointmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentButton.swift; sourceTree = "<group>"; };
 		BCC0566F2C7F4C4A002D6765 /* ServicesPricePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesPricePage.swift; sourceTree = "<group>"; };
@@ -96,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				BC82FD492C8045E00058C91E /* Medic.swift */,
-				BC82FD4B2C804E050058C91E /* ServicesPrice.swift */,
 				BC82FD5D2C80B3C20058C91E /* URLImageModel.swift */,
 			);
 			path = Decodable;
@@ -119,6 +120,15 @@
 				BC82FD612C80B4240058C91E /* URLAvatar.swift */,
 			);
 			path = Avatar;
+			sourceTree = "<group>";
+		};
+		BC82FD632C80B7260058C91E /* MedicsGrid */ = {
+			isa = PBXGroup;
+			children = (
+				BC39DC192C7F96C400069235 /* MedicsGrid.swift */,
+				BCAACF0F2C817A0A003BCB1E /* MedicsGridViewModel.swift */,
+			);
+			path = MedicsGrid;
 			sourceTree = "<group>";
 		};
 		BC9512142C7D926B0049D71D /* MedicCell */ = {
@@ -210,7 +220,7 @@
 			children = (
 				BCC608822C7847C400EB5575 /* HomePage.swift */,
 				BCD465CE2C7C3E6900D3177A /* HomePageFilter.swift */,
-				BC39DC192C7F96C400069235 /* MedicsGrid.swift */,
+				BC82FD632C80B7260058C91E /* MedicsGrid */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -242,6 +252,7 @@
 				BC82FD4D2C804E220058C91E /* Decodable */,
 				BCCC23DF2C7B0BAC00E0A260 /* Filter.swift */,
 				BCCC23E12C7B0BC200E0A260 /* Tabs.swift */,
+				BC82FD4B2C804E050058C91E /* ServicesPrice.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -339,6 +350,7 @@
 				BC82FD522C80531B0058C91E /* NetworkServiceError.swift in Sources */,
 				BCC056702C7F4C4A002D6765 /* ServicesPricePage.swift in Sources */,
 				BC82FD5E2C80B3C20058C91E /* URLImageModel.swift in Sources */,
+				BCAACF102C817A0A003BCB1E /* MedicsGridViewModel.swift in Sources */,
 				BC82FD4C2C804E050058C91E /* ServicesPrice.swift in Sources */,
 				BC82FD542C808D160058C91E /* extensions.swift in Sources */,
 				BC9512112C7D8AFC0049D71D /* MedicPage.swift in Sources */,

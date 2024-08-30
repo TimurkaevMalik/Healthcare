@@ -41,10 +41,12 @@ struct MedicPage: View {
                     
                     MedicShortInfo(image: Image(.clock), text: "Опыт работы: \(medic.seniority) лет")
                     
-                    MedicShortInfo(image: Image(.suitcase), text: "Врач \(medic.category.lowercased()) категории")
+                    if medic.category != "нет" {
+                        MedicShortInfo(image: Image(.suitcase), text: "Врач \(medic.category.lowercased()) категории")
+                    }
                     
                     if let university = medic.education.first?.university {
-                    MedicShortInfo(image: Image(.hatAcademic), text: university)
+                        MedicShortInfo(image: Image(.hatAcademic), text: university)
                     }
                     
                     if let oraganization = medic.workExpirience.first?.organization {
@@ -55,7 +57,7 @@ struct MedicPage: View {
                 .font(.ypRegular)
                 .foregroundStyle(.ypDarkGray)
                 
-                servicePriceContainer(leftText: "Стоимость услуг", rightText: "от \(servicesPrice.minimumPrice) ₽")
+                servicePriceContainer(leftText: "Стоимость услуг", rightText: "от \(servicesPrice.minPrice) ₽")
                     .padding(.top, 10)
                 
                 Text("Проводит диагностику и лечение терапевтических больных. Осуществляет расшифровку и снятие ЭКГ. Дает рекомендации по диетологии. Доктор имеет опыт работы в России и зарубежом. Проводит консультации пациентов на английском языке.")
@@ -65,7 +67,7 @@ struct MedicPage: View {
                 
                 Spacer(minLength: 0)
                 
-                AppointmentButton(text: "Записаться", servicesPrice: servicesPrice)
+                AppointmentButton(servicesPrice: servicesPrice)
                     .padding(.bottom, 10)
             }
             .padding([.leading, .trailing, .top], 16)

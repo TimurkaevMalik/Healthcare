@@ -43,24 +43,8 @@ struct RootView: View {
             Spacer(minLength: 0)
             
             TabBarController(selectedTab: $selectedTab)
-                .onAppear {
-                    fetchMedicsData()
-                }
         }
         .background(Color.ypLightGray)
-    }
-    
-    func fetchMedicsData() {
-        
-        medicService.fetchMedics { result in
-            
-            switch result {
-            case .success(let success):
-                print(success)
-            case .failure(let failure):
-                print(failure)
-            }
-        }
     }
 }
 

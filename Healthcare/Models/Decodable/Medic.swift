@@ -8,15 +8,17 @@
 import Foundation
 
 
-struct MedicData: Decodable {
+struct MedicData: Hashable, Decodable {
     let data: UsersData
 }
 
-struct UsersData: Decodable {
+struct UsersData: Hashable, Decodable {
     let users: [Medic]
 }
 
-struct Medic: Decodable {
+struct Medic: Hashable, Decodable {
+    
+    let id = UUID()
     
     let name: String
     let lastName: String
@@ -49,10 +51,10 @@ struct Medic: Decodable {
 }
 
 
-struct Education: Decodable {
+struct Education: Hashable, Decodable {
     let university: String
 }
 
-struct WorkExpirience: Decodable {
+struct WorkExpirience: Hashable, Decodable {
     let organization: String
 }

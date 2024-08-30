@@ -41,7 +41,6 @@ struct ServicesPricePage: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
-                        print("Did tab back button")
                         dismiss()
                     } label: {
                         Image(.arrowBack)

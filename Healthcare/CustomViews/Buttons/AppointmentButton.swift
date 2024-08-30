@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AppointmentButton: View {
     
-    let text: String
     let servicesPrice: ServicesPrice
     
     var body: some View {
@@ -18,11 +17,11 @@ struct AppointmentButton: View {
             
             ZStack {
                 
-                Rectangle().frame(height: 47).foregroundStyle(Color.ypPink)
+                Rectangle().frame(height: 47).foregroundStyle(servicesPrice.maxPrice > 0 ? .ypPink : .ypGray)
                     .clipShape(.rect(cornerRadius: 8))
                 
-                Text(text)
-                    .foregroundStyle(.ypWhite)
+                Text(servicesPrice.maxPrice > 0 ? "Записаться" : "Нет свободного расписания")
+                    .foregroundStyle(servicesPrice.maxPrice > 0 ? .ypWhite : .ypBlack)
             }
         }
     }
@@ -30,7 +29,7 @@ struct AppointmentButton: View {
 
 
 #Preview {
-    AppointmentButton(text: "Записаться", servicesPrice:
+    AppointmentButton(servicesPrice:
                         ServicesPrice(videoChat: 600,
                                            home: 600,
                                            hospital: 600))

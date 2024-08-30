@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-class URLImageService {
+final class URLImageService {
     
     private var task: URLSessionTask?
     
