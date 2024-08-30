@@ -62,7 +62,7 @@ final class MedicService {
     
     func makeRequestBody() -> URLRequest? {
         
-        guard let url = URL(string: "https://raw.githubusercontent.com/TimurkaevMalik/test_iOS_akatosphere/main/test.json") else {
+        guard let url = URL(string: "https://raw.githubusercontent.com/TimurkaevMalik/Healthcare/main/test.json") else {
             assertionFailure("Failed to create URL")
             return nil
         }
