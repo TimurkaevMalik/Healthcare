@@ -7,21 +7,16 @@
 
 import SwiftUI
 
-enum Tabs: Int {
-    case home = 0
-    case appointment = 1
-    case chat = 2
-    case profile = 3
-}
 
 struct TabBarController: View {
     
     @Binding var selectedTab: Tabs
     
     var body: some View {
+        Spacer()
         
-        VStack(spacing: 16){
-            
+        VStack(spacing: 0){
+        
             Rectangle()
                 .frame(height: 0.8)
                 .tint(.ypSilver)
@@ -47,6 +42,8 @@ struct TabBarController: View {
             }
         }
         .frame(height: 83)
+        .padding(.bottom, -22)
+        .background(Color.ypWhite)
     }
 }
 

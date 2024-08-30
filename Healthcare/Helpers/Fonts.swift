@@ -9,5 +9,8 @@ import SwiftUI
 
 
 extension Font {
-    static let tabBar = Font.custom("sub3", size: 12)
+    static let tabBar = Font.system(size: 12, weight: .regular)
+    static let ypSemiBold = Font.system(size: 16, weight: .semibold)
+    static let ypRegular = Font.system(size: 14, weight: .regular)
+    static let ypRegularTitle = Font.system(size: 24, weight: .regular)
 }

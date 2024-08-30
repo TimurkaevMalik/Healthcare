@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC39DC1A2C7F96C400069235 /* MedicsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC39DC192C7F96C400069235 /* MedicsGrid.swift */; };
+		BC82FD4A2C8045E00058C91E /* Medic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82FD492C8045E00058C91E /* Medic.swift */; };
+		BC82FD4C2C804E050058C91E /* ServicesPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82FD4B2C804E050058C91E /* ServicesPrice.swift */; };
+		BC82FD502C804EDD0058C91E /* MedicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82FD4F2C804EDD0058C91E /* MedicService.swift */; };
+		BC82FD522C80531B0058C91E /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82FD512C80531B0058C91E /* NetworkServiceError.swift */; };
+		BC82FD542C808D160058C91E /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82FD532C808D160058C91E /* extensions.swift */; };
+		BC82FD562C80A45B0058C91E /* URLImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82FD552C80A45B0058C91E /* URLImageService.swift */; };
+		BC82FD5C2C80B3390058C91E /* URLAvatarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82FD5B2C80B3390058C91E /* URLAvatarViewModel.swift */; };
+		BC82FD5E2C80B3C20058C91E /* URLImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82FD5D2C80B3C20058C91E /* URLImageModel.swift */; };
+		BC82FD622C80B4240058C91E /* URLAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82FD612C80B4240058C91E /* URLAvatar.swift */; };
+		BC9512112C7D8AFC0049D71D /* MedicPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9512102C7D8AFC0049D71D /* MedicPage.swift */; };
+		BC9512132C7D91B10049D71D /* MedicCellInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9512122C7D91B10049D71D /* MedicCellInfo.swift */; };
+		BCAACF102C817A0A003BCB1E /* MedicsGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAACF0F2C817A0A003BCB1E /* MedicsGridViewModel.swift */; };
+		BCC0566B2C7F4656002D6765 /* ServicePriceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0566A2C7F4656002D6765 /* ServicePriceContainer.swift */; };
+		BCC0566D2C7F48C0002D6765 /* AppointmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0566C2C7F48C0002D6765 /* AppointmentButton.swift */; };
+		BCC056702C7F4C4A002D6765 /* ServicesPricePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC0566F2C7F4C4A002D6765 /* ServicesPricePage.swift */; };
+		BCC079EF2C79BB2C005345DB /* MedicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC079EE2C79BB2C005345DB /* MedicCell.swift */; };
+		BCC1823B2C7AE82A00A1DDF2 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC1823A2C7AE82A00A1DDF2 /* FilterButton.swift */; };
 		BCC608502C783E0500EB5575 /* HealthcareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6084F2C783E0500EB5575 /* HealthcareApp.swift */; };
 		BCC608522C783E0500EB5575 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC608512C783E0500EB5575 /* RootView.swift */; };
 		BCC608562C783E0700EB5575 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC608552C783E0700EB5575 /* Assets.xcassets */; };
@@ -15,9 +33,31 @@
 		BCC608832C7847C400EB5575 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC608822C7847C400EB5575 /* HomePage.swift */; };
 		BCC608862C784EEA00EB5575 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC608852C784EEA00EB5575 /* TabBarItem.swift */; };
 		BCC608892C78572400EB5575 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC608882C78572400EB5575 /* Fonts.swift */; };
+		BCCC23E02C7B0BAC00E0A260 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC23DF2C7B0BAC00E0A260 /* Filter.swift */; };
+		BCCC23E22C7B0BC200E0A260 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC23E12C7B0BC200E0A260 /* Tabs.swift */; };
+		BCD465CD2C7C3CD200D3177A /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD465CC2C7C3CD200D3177A /* SearchBar.swift */; };
+		BCD465CF2C7C3E6900D3177A /* HomePageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD465CE2C7C3E6900D3177A /* HomePageFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC39DC192C7F96C400069235 /* MedicsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicsGrid.swift; sourceTree = "<group>"; };
+		BC82FD492C8045E00058C91E /* Medic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medic.swift; sourceTree = "<group>"; };
+		BC82FD4B2C804E050058C91E /* ServicesPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesPrice.swift; sourceTree = "<group>"; };
+		BC82FD4F2C804EDD0058C91E /* MedicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicService.swift; sourceTree = "<group>"; };
+		BC82FD512C80531B0058C91E /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
+		BC82FD532C808D160058C91E /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		BC82FD552C80A45B0058C91E /* URLImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageService.swift; sourceTree = "<group>"; };
+		BC82FD5B2C80B3390058C91E /* URLAvatarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLAvatarViewModel.swift; sourceTree = "<group>"; };
+		BC82FD5D2C80B3C20058C91E /* URLImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageModel.swift; sourceTree = "<group>"; };
+		BC82FD612C80B4240058C91E /* URLAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLAvatar.swift; sourceTree = "<group>"; };
+		BC9512102C7D8AFC0049D71D /* MedicPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicPage.swift; sourceTree = "<group>"; };
+		BC9512122C7D91B10049D71D /* MedicCellInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicCellInfo.swift; sourceTree = "<group>"; };
+		BCAACF0F2C817A0A003BCB1E /* MedicsGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicsGridViewModel.swift; sourceTree = "<group>"; };
+		BCC0566A2C7F4656002D6765 /* ServicePriceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePriceContainer.swift; sourceTree = "<group>"; };
+		BCC0566C2C7F48C0002D6765 /* AppointmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentButton.swift; sourceTree = "<group>"; };
+		BCC0566F2C7F4C4A002D6765 /* ServicesPricePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesPricePage.swift; sourceTree = "<group>"; };
+		BCC079EE2C79BB2C005345DB /* MedicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicCell.swift; sourceTree = "<group>"; };
+		BCC1823A2C7AE82A00A1DDF2 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		BCC6084C2C783E0500EB5575 /* Healthcare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Healthcare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC6084F2C783E0500EB5575 /* HealthcareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthcareApp.swift; sourceTree = "<group>"; };
 		BCC608512C783E0500EB5575 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -27,6 +67,10 @@
 		BCC608822C7847C400EB5575 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		BCC608852C784EEA00EB5575 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		BCC608882C78572400EB5575 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		BCCC23DF2C7B0BAC00E0A260 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		BCCC23E12C7B0BC200E0A260 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
+		BCD465CC2C7C3CD200D3177A /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		BCD465CE2C7C3E6900D3177A /* HomePageFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePageFilter.swift; path = ../../CustomViews/HomePageFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +84,78 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC82FD482C803FF00058C91E /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				BCC0566C2C7F48C0002D6765 /* AppointmentButton.swift */,
+				BCC1823A2C7AE82A00A1DDF2 /* FilterButton.swift */,
+				BCC608852C784EEA00EB5575 /* TabBarItem.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		BC82FD4D2C804E220058C91E /* Decodable */ = {
+			isa = PBXGroup;
+			children = (
+				BC82FD492C8045E00058C91E /* Medic.swift */,
+				BC82FD5D2C80B3C20058C91E /* URLImageModel.swift */,
+			);
+			path = Decodable;
+			sourceTree = "<group>";
+		};
+		BC82FD4E2C804E660058C91E /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+				BC82FD4F2C804EDD0058C91E /* MedicService.swift */,
+				BC82FD552C80A45B0058C91E /* URLImageService.swift */,
+				BC82FD512C80531B0058C91E /* NetworkServiceError.swift */,
+			);
+			path = NetworkServices;
+			sourceTree = "<group>";
+		};
+		BC82FD5A2C80B2FB0058C91E /* Avatar */ = {
+			isa = PBXGroup;
+			children = (
+				BC82FD5B2C80B3390058C91E /* URLAvatarViewModel.swift */,
+				BC82FD612C80B4240058C91E /* URLAvatar.swift */,
+			);
+			path = Avatar;
+			sourceTree = "<group>";
+		};
+		BC82FD632C80B7260058C91E /* MedicsGrid */ = {
+			isa = PBXGroup;
+			children = (
+				BC39DC192C7F96C400069235 /* MedicsGrid.swift */,
+				BCAACF0F2C817A0A003BCB1E /* MedicsGridViewModel.swift */,
+			);
+			path = MedicsGrid;
+			sourceTree = "<group>";
+		};
+		BC9512142C7D926B0049D71D /* MedicCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC9512122C7D91B10049D71D /* MedicCellInfo.swift */,
+				BCC079EE2C79BB2C005345DB /* MedicCell.swift */,
+			);
+			path = MedicCell;
+			sourceTree = "<group>";
+		};
+		BCB738F02C7D8A9500135B79 /* MedicPage */ = {
+			isa = PBXGroup;
+			children = (
+				BC9512102C7D8AFC0049D71D /* MedicPage.swift */,
+			);
+			path = MedicPage;
+			sourceTree = "<group>";
+		};
+		BCC0566E2C7F4C32002D6765 /* ServicesPricePage */ = {
+			isa = PBXGroup;
+			children = (
+				BCC0566F2C7F4C4A002D6765 /* ServicesPricePage.swift */,
+			);
+			path = ServicesPricePage;
+			sourceTree = "<group>";
+		};
 		BCC608432C783E0500EB5575 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +175,8 @@
 		BCC6084E2C783E0500EB5575 /* Healthcare */ = {
 			isa = PBXGroup;
 			children = (
+				BC82FD4E2C804E660058C91E /* NetworkServices */,
+				BCCC23DE2C7B0B4600E0A260 /* Models */,
 				BCC608842C784ED200EB5575 /* CustomViews */,
 				BCC608872C78570E00EB5575 /* Helpers */,
 				BCC6087D2C78405A00EB5575 /* ViewControllers */,
@@ -83,6 +201,8 @@
 				BCC608512C783E0500EB5575 /* RootView.swift */,
 				BCC6087E2C78412A00EB5575 /* TabBarController */,
 				BCC608812C7847A400EB5575 /* HomePage */,
+				BCB738F02C7D8A9500135B79 /* MedicPage */,
+				BCC0566E2C7F4C32002D6765 /* ServicesPricePage */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -99,6 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				BCC608822C7847C400EB5575 /* HomePage.swift */,
+				BCD465CE2C7C3E6900D3177A /* HomePageFilter.swift */,
+				BC82FD632C80B7260058C91E /* MedicsGrid */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -106,7 +228,11 @@
 		BCC608842C784ED200EB5575 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				BCC608852C784EEA00EB5575 /* TabBarItem.swift */,
+				BC82FD5A2C80B2FB0058C91E /* Avatar */,
+				BC82FD482C803FF00058C91E /* Buttons */,
+				BC9512142C7D926B0049D71D /* MedicCell */,
+				BCD465CC2C7C3CD200D3177A /* SearchBar.swift */,
+				BCC0566A2C7F4656002D6765 /* ServicePriceContainer.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -115,8 +241,20 @@
 			isa = PBXGroup;
 			children = (
 				BCC608882C78572400EB5575 /* Fonts.swift */,
+				BC82FD532C808D160058C91E /* extensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BCCC23DE2C7B0B4600E0A260 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BC82FD4D2C804E220058C91E /* Decodable */,
+				BCCC23DF2C7B0BAC00E0A260 /* Filter.swift */,
+				BCCC23E12C7B0BC200E0A260 /* Tabs.swift */,
+				BC82FD4B2C804E050058C91E /* ServicesPrice.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,11 +328,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCC608802C78414F00EB5575 /* TabBarController.swift in Sources */,
+				BC82FD502C804EDD0058C91E /* MedicService.swift in Sources */,
 				BCC608522C783E0500EB5575 /* RootView.swift in Sources */,
+				BC82FD5C2C80B3390058C91E /* URLAvatarViewModel.swift in Sources */,
+				BC39DC1A2C7F96C400069235 /* MedicsGrid.swift in Sources */,
 				BCC608862C784EEA00EB5575 /* TabBarItem.swift in Sources */,
+				BCCC23E22C7B0BC200E0A260 /* Tabs.swift in Sources */,
 				BCC608502C783E0500EB5575 /* HealthcareApp.swift in Sources */,
+				BC82FD622C80B4240058C91E /* URLAvatar.swift in Sources */,
+				BC82FD562C80A45B0058C91E /* URLImageService.swift in Sources */,
+				BCC079EF2C79BB2C005345DB /* MedicCell.swift in Sources */,
 				BCC608892C78572400EB5575 /* Fonts.swift in Sources */,
+				BCD465CF2C7C3E6900D3177A /* HomePageFilter.swift in Sources */,
+				BCC0566B2C7F4656002D6765 /* ServicePriceContainer.swift in Sources */,
 				BCC608832C7847C400EB5575 /* HomePage.swift in Sources */,
+				BCCC23E02C7B0BAC00E0A260 /* Filter.swift in Sources */,
+				BC82FD4A2C8045E00058C91E /* Medic.swift in Sources */,
+				BC9512132C7D91B10049D71D /* MedicCellInfo.swift in Sources */,
+				BCD465CD2C7C3CD200D3177A /* SearchBar.swift in Sources */,
+				BCC0566D2C7F48C0002D6765 /* AppointmentButton.swift in Sources */,
+				BC82FD522C80531B0058C91E /* NetworkServiceError.swift in Sources */,
+				BCC056702C7F4C4A002D6765 /* ServicesPricePage.swift in Sources */,
+				BC82FD5E2C80B3C20058C91E /* URLImageModel.swift in Sources */,
+				BCAACF102C817A0A003BCB1E /* MedicsGridViewModel.swift in Sources */,
+				BC82FD4C2C804E050058C91E /* ServicesPrice.swift in Sources */,
+				BC82FD542C808D160058C91E /* extensions.swift in Sources */,
+				BC9512112C7D8AFC0049D71D /* MedicPage.swift in Sources */,
+				BCC1823B2C7AE82A00A1DDF2 /* FilterButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
